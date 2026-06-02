@@ -15,9 +15,9 @@
     --edge:    rgba(255,255,255,0.09);
     --edge2:   rgba(255,255,255,0.17);
     --text:    #FFFFFF;
-    --sub:     rgba(255,255,255,0.7);
-    --dim:     rgba(255,255,255,0.4);
-    --muted:   rgba(255,255,255,0.22);
+    --sub:     rgba(255,255,255,0.92);
+    --dim:     rgba(255,255,255,0.75);
+    --muted:   rgba(255,255,255,0.55);
     --gold:    #E2BC6E;
     --gold-d:  rgba(226,188,110,0.5);
     --alert:   rgba(255,85,55,0.9);
@@ -474,7 +474,7 @@
       <circle cx="15" cy="15" r="2.4" fill="#E2BC6E"/>
       <circle cx="5"  cy="24" r="1.1" fill="rgba(255,255,255,0.45)"/>
       <circle cx="24" cy="22" r="1.4" fill="rgba(255,255,255,0.55)"/>
-      <circle cx="20" cy="4"  r="0.9" fill="rgba(255,255,255,0.3)"/>
+      <circle cx="20" cy="4"  r="0.9" fill="rgba(255,255,255,0.7)"/>
       <line x1="4"  y1="4"  x2="15" y2="15" stroke="rgba(255,255,255,0.12)" stroke-width="0.8"/>
       <line x1="26" y1="6"  x2="15" y2="15" stroke="rgba(255,255,255,0.12)" stroke-width="0.8"/>
       <line x1="5"  y1="24" x2="15" y2="15" stroke="rgba(255,255,255,0.12)" stroke-width="0.8"/>
@@ -918,7 +918,7 @@ function drawMap(scores){
     const angle = nodes.indexOf(n) / nodes.length * Math.PI*2 - Math.PI/2;
     const lx = cx + Math.cos(angle)*(radius+34);
     const ly = cy + Math.sin(angle)*(radius+34);
-    ctx.fillStyle='rgba(255,255,255,0.32)';
+    ctx.fillStyle='rgba(255,255,255,0.75)';
     ctx.font=`300 9px 'DM Mono', monospace`;
     ctx.textAlign='center';
     ctx.textBaseline='middle';
