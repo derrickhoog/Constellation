@@ -12,8 +12,8 @@
   :root {
     --bg:      #000000;
     --surface: #0A0A0A;
-    --edge:    rgba(255,255,255,0.09);
-    --edge2:   rgba(255,255,255,0.17);
+    --edge:    rgba(255,255,255,0.1);
+    --edge2:   rgba(255,255,255,0.2);
     --text:    #FFFFFF;
     --sub:     rgba(255,255,255,0.92);
     --dim:     rgba(255,255,255,0.75);
@@ -60,6 +60,7 @@
     font-weight: 300;
     letter-spacing: 0.24em;
     text-transform: uppercase;
+    color: var(--text);
   }
   .logo-sub {
     font-family: var(--mono);
@@ -72,13 +73,13 @@
   .by-line {
     font-family: var(--mono);
     font-size: 10px;
-    color: var(--dim);
+    color: var(--muted);
     letter-spacing: 0.1em;
     text-transform: uppercase;
   }
 
   /* ── HERO ── */
-  .hero { padding: 88px 52px 72px; max-width: 720px; }
+  .hero { padding: 88px 52px 72px; max-width: 760px; }
   .hero-eye {
     font-family: var(--mono);
     font-size: 10px;
@@ -86,7 +87,7 @@
     text-transform: uppercase;
     color: var(--gold);
     margin-bottom: 24px;
-    opacity: 0.85;
+    opacity: 0.9;
   }
   .hero h1 {
     font-size: clamp(46px, 6vw, 78px);
@@ -94,14 +95,15 @@
     line-height: 1.0;
     letter-spacing: 0.01em;
     margin-bottom: 24px;
+    color: var(--text);
   }
   .hero h1 em { font-style: italic; color: var(--gold); }
   .hero-body {
-    font-size: 18px;
+    font-size: 19px;
     font-weight: 300;
     line-height: 1.7;
     color: var(--sub);
-    max-width: 500px;
+    max-width: 540px;
     margin-bottom: 16px;
   }
   .hero-note {
@@ -110,25 +112,25 @@
     color: var(--muted);
     letter-spacing: 0.06em;
     line-height: 1.7;
-    max-width: 500px;
-    margin-bottom: 48px;
+    max-width: 540px;
+    margin-bottom: 52px;
   }
 
-  /* ── DIMENSION PREVIEW ── */
-  .dims-preview {
+  /* ── ELEMENTS PREVIEW ── */
+  .elements-preview {
     display: flex;
     gap: 0;
     border: 1px solid var(--edge);
     margin-bottom: 52px;
   }
-  .dp-item {
+  .ep-item {
     flex: 1;
-    padding: 14px 16px;
+    padding: 16px 18px;
     border-right: 1px solid var(--edge);
   }
-  .dp-item:last-child { border-right: none; }
-  .dp-num { font-family: var(--mono); font-size: 9px; color: var(--muted); letter-spacing: 0.12em; margin-bottom: 4px; }
-  .dp-name { font-family: var(--serif); font-size: 12px; font-weight: 300; letter-spacing: 0.04em; color: var(--dim); }
+  .ep-item:last-child { border-right: none; }
+  .ep-num { font-family: var(--mono); font-size: 9px; color: var(--muted); letter-spacing: 0.12em; margin-bottom: 5px; }
+  .ep-name { font-family: var(--serif); font-size: 13px; font-weight: 400; letter-spacing: 0.04em; color: var(--dim); }
 
   /* ── BUTTONS ── */
   .btn-gold {
@@ -157,7 +159,7 @@
     cursor: pointer;
     transition: all 0.2s;
   }
-  .btn-nav:hover { border-color: rgba(255,255,255,0.4); color: var(--text); }
+  .btn-nav:hover { border-color: rgba(255,255,255,0.5); color: var(--text); }
   .btn-nav.fwd { border-color: var(--gold-d); color: var(--gold); }
   .btn-nav.fwd:hover { background: rgba(226,188,110,0.07); border-color: var(--gold); }
   .btn-nav.back { border-color: var(--edge); color: var(--dim); }
@@ -169,8 +171,8 @@
   .prog-wrap { margin-bottom: 48px; }
   .prog-meta { display: flex; justify-content: space-between; margin-bottom: 10px; }
   .prog-label { font-family: var(--mono); font-size: 9px; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; }
-  .prog-bar { height: 1px; background: rgba(255,255,255,0.07); }
-  .prog-fill { height: 100%; background: var(--gold); transition: width 0.45s ease; opacity: 0.65; }
+  .prog-bar { height: 1px; background: rgba(255,255,255,0.08); }
+  .prog-fill { height: 100%; background: var(--gold); transition: width 0.45s ease; opacity: 0.7; }
 
   /* ── SECTIONS ── */
   .section { display: none; }
@@ -181,43 +183,58 @@
   }
 
   .sec-head {
-    margin-bottom: 36px;
-    padding-bottom: 28px;
+    margin-bottom: 40px;
+    padding-bottom: 32px;
     border-bottom: 1px solid var(--edge);
   }
   .sec-meta-row {
     display: flex;
     align-items: baseline;
     gap: 14px;
-    margin-bottom: 12px;
+    margin-bottom: 14px;
   }
   .sec-num { font-family: var(--mono); font-size: 9px; color: var(--muted); letter-spacing: 0.12em; }
-  .sec-dim  { font-family: var(--mono); font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); opacity: 0.75; }
+  .sec-tag { font-family: var(--mono); font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); opacity: 0.8; }
   .sec-head h2 {
-    font-size: clamp(26px, 3.5vw, 42px);
+    font-size: clamp(28px, 4vw, 48px);
     font-weight: 300;
     letter-spacing: 0.01em;
-    line-height: 1.1;
-    margin-bottom: 10px;
+    line-height: 1.05;
+    margin-bottom: 6px;
     color: var(--text);
   }
-  .sec-head p { font-size: 15px; font-weight: 300; color: var(--sub); line-height: 1.65; max-width: 560px; }
+  .sec-head h2 em { font-style: italic; color: var(--gold); }
+  .sec-subtitle {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .sec-head p {
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--sub);
+    line-height: 1.7;
+    max-width: 600px;
+  }
 
   /* ── QUESTION CARDS ── */
   .q-grid { display: grid; gap: 10px; }
   .q-card {
     background: var(--surface);
     border: 1px solid var(--edge);
-    padding: 22px 24px;
+    padding: 24px 26px;
     transition: border-color 0.2s;
   }
   .q-card:hover { border-color: var(--edge2); }
   .q-label {
     font-family: var(--serif);
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 300;
-    line-height: 1.5;
-    margin-bottom: 14px;
+    line-height: 1.55;
+    margin-bottom: 16px;
     color: var(--text);
   }
   .scale-row { display: flex; gap: 6px; }
@@ -254,8 +271,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 40px;
-    padding-top: 24px;
+    margin-top: 44px;
+    padding-top: 28px;
     border-top: 1px solid var(--edge);
   }
 
@@ -274,7 +291,7 @@
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--gold);
-    opacity: 0.7;
+    opacity: 0.75;
     margin-bottom: 18px;
   }
   .res-head h1 {
@@ -312,7 +329,7 @@
   .sc-num.gold { color: var(--gold); }
   .sc-desc {
     font-family: var(--serif);
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 300;
     color: var(--sub);
     margin-top: 10px;
@@ -337,27 +354,27 @@
     border: 1px solid var(--edge);
   }
 
-  /* ── DIM BREAKDOWN ── */
-  .dim-breakdown {
+  /* ── ELEMENT BREAKDOWN ── */
+  .el-breakdown {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(5, 1fr);
     gap: 1px;
     background: var(--edge);
     margin-bottom: 56px;
   }
-  .dim-block { background: var(--bg); padding: 28px 22px; }
-  .db-num { font-family: var(--mono); font-size: 9px; color: var(--muted); letter-spacing: 0.12em; margin-bottom: 6px; }
-  .db-name {
+  .el-block { background: var(--bg); padding: 28px 22px; }
+  .el-num { font-family: var(--mono); font-size: 9px; color: var(--muted); letter-spacing: 0.12em; margin-bottom: 6px; }
+  .el-name {
     font-family: var(--serif);
-    font-size: 14px;
-    font-weight: 300;
+    font-size: 15px;
+    font-weight: 400;
     color: var(--text);
     margin-bottom: 16px;
     padding-bottom: 12px;
     border-bottom: 1px solid var(--edge);
     line-height: 1.3;
   }
-  .db-score {
+  .el-score {
     font-family: var(--serif);
     font-size: 44px;
     font-weight: 300;
@@ -365,25 +382,21 @@
     line-height: 1;
     margin-bottom: 4px;
   }
-  .db-bar-track {
-    height: 1px;
-    background: rgba(255,255,255,0.08);
-    margin-top: 14px;
-  }
-  .db-bar-fill { height: 100%; transition: width 1s ease; }
-  .db-bar-fill.w { background: var(--alert); }
-  .db-bar-fill.m { background: var(--caution); }
-  .db-bar-fill.s { background: var(--good); }
+  .el-bar-track { height: 1px; background: rgba(255,255,255,0.08); margin-top: 14px; }
+  .el-bar-fill { height: 100%; transition: width 1s ease; }
+  .el-bar-fill.w { background: var(--alert); }
+  .el-bar-fill.m { background: var(--caution); }
+  .el-bar-fill.s { background: var(--good); }
 
   /* ── FINDINGS ── */
   .findings-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(5, 1fr);
     gap: 1px;
     background: var(--edge);
     margin-bottom: 56px;
   }
-  .finding { background: var(--bg); padding: 24px 22px; }
+  .finding { background: var(--bg); padding: 26px 22px; }
   .f-status {
     font-family: var(--mono);
     font-size: 9px;
@@ -394,21 +407,66 @@
   .f-status.a { color: var(--alert); }
   .f-status.c { color: var(--caution); }
   .f-status.s { color: var(--good); }
-  .f-dim { font-family: var(--mono); font-size: 9px; color: var(--muted); letter-spacing: 0.07em; margin-bottom: 12px; }
+  .f-el { font-family: var(--mono); font-size: 9px; color: var(--muted); letter-spacing: 0.07em; margin-bottom: 12px; }
   .f-title {
     font-family: var(--serif);
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 400;
     line-height: 1.25;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     color: var(--text);
   }
   .f-body {
     font-family: var(--serif);
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 300;
     line-height: 1.65;
     color: var(--sub);
+  }
+
+  /* ── WHAT'S NEXT ── */
+  .whats-next {
+    border: 1px solid var(--edge);
+    background: var(--surface);
+    padding: 48px 52px;
+    margin-bottom: 56px;
+  }
+  .wn-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.75;
+    margin-bottom: 20px;
+  }
+  .wn-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 48px;
+  }
+  .wn-item-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .wn-item-title {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--text);
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+  .wn-item-body {
+    font-family: var(--serif);
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--sub);
+    line-height: 1.65;
   }
 
   /* ── CTA ── */
@@ -424,7 +482,7 @@
   }
   .cta h3 {
     font-family: var(--serif);
-    font-size: 30px;
+    font-size: 32px;
     font-weight: 300;
     letter-spacing: 0.03em;
     margin-bottom: 10px;
@@ -449,11 +507,12 @@
   }
   footer span { font-family: var(--mono); font-size: 9px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
 
-  @media (max-width: 860px) {
+  @media (max-width: 900px) {
     header, .hero, #app, #results { padding-left: 24px; padding-right: 24px; }
     .score-row { grid-template-columns: 1fr 1fr; }
-    .dim-breakdown, .findings-grid { grid-template-columns: 1fr 1fr; }
-    .dims-preview { flex-wrap: wrap; }
+    .el-breakdown, .findings-grid { grid-template-columns: 1fr 1fr; }
+    .elements-preview { flex-wrap: wrap; }
+    .wn-grid { grid-template-columns: 1fr; }
     .cta { flex-direction: column; align-items: flex-start; padding: 32px 24px; }
     footer { flex-direction: column; gap: 8px; }
   }
@@ -469,19 +528,20 @@
 <header>
   <div class="logo">
     <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
-      <circle cx="4"  cy="4"  r="1.4" fill="rgba(255,255,255,0.55)"/>
-      <circle cx="26" cy="6"  r="1.1" fill="rgba(255,255,255,0.45)"/>
+      <circle cx="4"  cy="4"  r="1.4" fill="rgba(255,255,255,0.6)"/>
+      <circle cx="26" cy="6"  r="1.1" fill="rgba(255,255,255,0.5)"/>
       <circle cx="15" cy="15" r="2.4" fill="#E2BC6E"/>
-      <circle cx="5"  cy="24" r="1.1" fill="rgba(255,255,255,0.45)"/>
-      <circle cx="24" cy="22" r="1.4" fill="rgba(255,255,255,0.55)"/>
-      <circle cx="20" cy="4"  r="0.9" fill="rgba(255,255,255,0.7)"/>
-      <line x1="4"  y1="4"  x2="15" y2="15" stroke="rgba(255,255,255,0.12)" stroke-width="0.8"/>
-      <line x1="26" y1="6"  x2="15" y2="15" stroke="rgba(255,255,255,0.12)" stroke-width="0.8"/>
-      <line x1="5"  y1="24" x2="15" y2="15" stroke="rgba(255,255,255,0.12)" stroke-width="0.8"/>
-      <line x1="24" y1="22" x2="15" y2="15" stroke="rgba(255,255,255,0.12)" stroke-width="0.8"/>
+      <circle cx="5"  cy="24" r="1.1" fill="rgba(255,255,255,0.5)"/>
+      <circle cx="24" cy="22" r="1.4" fill="rgba(255,255,255,0.6)"/>
+      <circle cx="20" cy="4"  r="0.9" fill="rgba(255,255,255,0.35)"/>
+      <line x1="4"  y1="4"  x2="15" y2="15" stroke="rgba(255,255,255,0.14)" stroke-width="0.8"/>
+      <line x1="26" y1="6"  x2="15" y2="15" stroke="rgba(255,255,255,0.14)" stroke-width="0.8"/>
+      <line x1="5"  y1="24" x2="15" y2="15" stroke="rgba(255,255,255,0.14)" stroke-width="0.8"/>
+      <line x1="24" y1="22" x2="15" y2="15" stroke="rgba(255,255,255,0.14)" stroke-width="0.8"/>
     </svg>
     <div>
       <div class="logo-name">Constellation</div>
+      <div class="logo-sub">A Brand Diagnostic</div>
     </div>
   </div>
   <div class="by-line">By Derrick Hoog</div>
@@ -491,15 +551,15 @@
 <div class="hero" id="heroSection">
   <div class="hero-eye">A Brand Diagnostic</div>
   <h1>Can your audience<br>connect <em>the dots?</em></h1>
-  <p class="hero-body">If the people you need to reach can't form one clear mental image of what you stand for, you don't have a brand — you have activity. Constellation measures how well your brand elements connect into a legible whole.</p>
-  <p class="hero-note">5 dimensions · 20 questions · ~5 minutes</p>
+  <p class="hero-body">Most brands have activity. Few have a position. Constellation is a diagnostic built around five elements of a brand that truly stands for something — one that your audience can feel, believe, and choose on purpose.</p>
+  <p class="hero-note">5 elements · 20 questions · ~5 minutes</p>
 
-  <div class="dims-preview">
-    <div class="dp-item"><div class="dp-num">01</div><div class="dp-name">Core Conviction</div></div>
-    <div class="dp-item"><div class="dp-num">02</div><div class="dp-name">External Consistency</div></div>
-    <div class="dp-item"><div class="dp-num">03</div><div class="dp-name">Audience Resonance</div></div>
-    <div class="dp-item"><div class="dp-num">04</div><div class="dp-name">Internal Alignment</div></div>
-    <div class="dp-item"><div class="dp-num">05</div><div class="dp-name">Market Distinction</div></div>
+  <div class="elements-preview">
+    <div class="ep-item"><div class="ep-num">01</div><div class="ep-name">The Enemy</div></div>
+    <div class="ep-item"><div class="ep-num">02</div><div class="ep-name">The Good</div></div>
+    <div class="ep-item"><div class="ep-num">03</div><div class="ep-name">The Ally</div></div>
+    <div class="ep-item"><div class="ep-num">04</div><div class="ep-name">The Key</div></div>
+    <div class="ep-item"><div class="ep-num">05</div><div class="ep-name">The Prize</div></div>
   </div>
 
   <button class="btn-gold" onclick="startDiagnostic()">Begin Diagnostic →</button>
@@ -509,8 +569,8 @@
 <div id="app">
   <div class="prog-wrap">
     <div class="prog-meta">
-      <span class="prog-label" id="progLabel">Section 1 of 5</span>
-      <span class="prog-label" id="progDim"></span>
+      <span class="prog-label" id="progLabel">Element 1 of 5</span>
+      <span class="prog-label" id="progEl"></span>
     </div>
     <div class="prog-bar"><div class="prog-fill" id="progFill" style="width:20%"></div></div>
   </div>
@@ -523,6 +583,7 @@
 
 <!-- RESULTS -->
 <div id="results">
+
   <div class="res-head">
     <div class="res-eye">Constellation Report · Derrick Hoog</div>
     <h1 id="resTitle">Your Brand<br>Clarity Score</h1>
@@ -535,19 +596,19 @@
       <div class="sc-desc" id="scLabel"></div>
     </div>
     <div class="score-cell">
-      <div class="sc-label">Brightest Star</div>
+      <div class="sc-label">Strongest Element</div>
       <div class="sc-num gold" id="scBest">—</div>
-      <div class="sc-desc" id="scBestName">Your strongest dimension</div>
+      <div class="sc-desc" id="scBestName"></div>
     </div>
     <div class="score-cell">
-      <div class="sc-label">Dim Star</div>
+      <div class="sc-label">Weakest Element</div>
       <div class="sc-num gold" id="scWorst">—</div>
-      <div class="sc-desc" id="scWorstName">Your biggest gap</div>
+      <div class="sc-desc" id="scWorstName"></div>
     </div>
     <div class="score-cell">
-      <div class="sc-label">Questions Answered</div>
-      <div class="sc-num" id="scAnswered">—</div>
-      <div class="sc-desc">of 20 total</div>
+      <div class="sc-label">Argument Integrity</div>
+      <div class="sc-num" id="scIntegrity">—</div>
+      <div class="sc-desc">How well your five elements connect to form one position, not five separate ones</div>
     </div>
   </div>
 
@@ -556,19 +617,36 @@
     <canvas id="constellationCanvas"></canvas>
   </div>
 
-  <div class="sec-label" style="margin-bottom:18px;">Dimension Scores</div>
-  <div class="dim-breakdown" id="dimBreakdown"></div>
+  <div class="sec-label" style="margin-bottom:18px;">Element Scores</div>
+  <div class="el-breakdown" id="elBreakdown"></div>
 
   <div class="sec-label" style="margin-top:56px;margin-bottom:18px;">Diagnostic Findings</div>
   <div class="findings-grid" id="findingsGrid"></div>
 
+  <div class="whats-next">
+    <div class="wn-label">What comes next</div>
+    <div class="wn-grid">
+      <div>
+        <div class="wn-item-label">If your score is strong</div>
+        <div class="wn-item-title">Test whether the argument holds.</div>
+        <div class="wn-item-body">Five strong elements don't automatically make one strong position. The work ahead should explore whether your Enemy, Good, Ally, Key, and Prize form a single coherent argument — or five separate ones.</div>
+      </div>
+      <div>
+        <div class="wn-item-label">If your score reveals gaps</div>
+        <div class="wn-item-title">Name what's missing first.</div>
+        <div class="wn-item-body">A vague Enemy produces a vague brand. A Prize no one can feel doesn't compel anyone. The diagnostic tells you where the position breaks down. The work is building it back up with conviction.</div>
+      </div>
+    </div>
+  </div>
+
   <div class="cta">
     <div>
       <h3>Let's connect.</h3>
-      <p>Constellation is a starting point. A real brand coherence conversation goes deeper — into what's breaking the image, what your audience actually perceives, and what it would take to make every dot connect.</p>
+      <p>Constellation is a starting point. A real brand clarity conversation goes deeper — into what your position actually is, whether your five elements form a single argument, and what it would take to make your brand stand for something your audience can feel.</p>
     </div>
     <button class="btn-gold" onclick="window.open('https://www.linkedin.com/in/derrickhoog','_blank')">Find me on LinkedIn →</button>
   </div>
+
 </div>
 
 </div><!-- /wrap -->
@@ -587,111 +665,115 @@
   function seed(){
     stars = [];
     for(let i=0;i<180;i++){
-      stars.push({
-        x: Math.random(), y: Math.random(),
-        r: Math.random()*0.9+0.15,
-        a: Math.random()*0.32+0.07
-      });
+      stars.push({ x:Math.random(), y:Math.random(), r:Math.random()*0.9+0.15, a:Math.random()*0.32+0.07 });
     }
   }
   function draw(){
-    c.width = window.innerWidth; c.height = window.innerHeight;
+    c.width=window.innerWidth; c.height=window.innerHeight;
     ctx.clearRect(0,0,c.width,c.height);
-    stars.forEach(s => {
-      ctx.fillStyle = `rgba(255,255,255,${s.a})`;
-      ctx.beginPath();
-      ctx.arc(s.x*c.width, s.y*c.height, s.r, 0, Math.PI*2);
-      ctx.fill();
+    stars.forEach(s=>{
+      ctx.fillStyle=`rgba(255,255,255,${s.a})`;
+      ctx.beginPath(); ctx.arc(s.x*c.width,s.y*c.height,s.r,0,Math.PI*2); ctx.fill();
     });
   }
-  window.addEventListener('resize', draw);
+  window.addEventListener('resize',draw);
   seed(); draw();
 })();
 
 // ─── DATA ────────────────────────────────────────────────────
-const DIMS = [
+const ELEMENTS = [
   {
-    name: 'Core Conviction',
-    desc: 'A brand that can\'t be explained in a sentence doesn\'t have one yet. This dimension measures whether your purpose is defined, communicated, and making real decisions.',
+    name: 'The Enemy',
+    tag: 'What we\'re fighting against',
+    subtitle: 'The clear aim at the right problem.',
+    intro: 'The Enemy isn\'t a competitor. It\'s the condition, assumption, belief, or behavior in the market that makes your brand necessary. If it didn\'t exist, you wouldn\'t need to.',
     questions: [
-      'We have a single, written articulation of why our organization exists.',
-      'Any team member could explain our purpose in one sentence without prompting.',
-      'Our mission guides real decisions about what we do — and what we don\'t pursue.',
-      'Our audience could accurately describe our purpose if asked unprompted.'
+      'We can name the specific problem, assumption, or condition our brand exists to oppose — in one sentence, without hedging.',
+      'Our Enemy is something our audience already feels, even if they haven\'t named it yet.',
+      'Our brand\'s decisions — what we do, what we don\'t do, what we say — are visibly shaped by our opposition to this Enemy.',
+      'If someone read our website, watched our content, or heard our pitch, they could identify our Enemy without us having to explain it.',
     ]
   },
   {
-    name: 'External Consistency',
-    desc: 'Clarity is built through repetition. If your brand looks and sounds different across channels, your audience is piecing together a picture you haven\'t given them.',
+    name: 'The Good',
+    tag: 'What we\'re fighting for',
+    subtitle: 'The palpable depiction of what should be.',
+    intro: 'The Good isn\'t your mission statement. It\'s the specific, vivid picture of the world your brand is trying to create — concrete enough that someone could recognize it if they saw it, and feel the distance between where things are and where they should be.',
     questions: [
-      'Our visual identity — logo, color, typography — is applied consistently across all channels.',
-      'Our tone of voice sounds the same whether we\'re writing an email, a post, or a proposal.',
-      'We have documented brand standards that are actively used — not just filed away.',
-      'A new team member could produce on-brand content without extensive guidance.'
+      'We can describe the specific condition, outcome, or reality our brand is working toward — not in values language, but in terms someone could actually picture.',
+      'Our Good is the direct answer to our Enemy — if the Enemy disappeared, the Good is what would take its place.',
+      'The people we most want to reach would look at our depiction of the Good and say "that\'s exactly what I want" — without us having to sell it.',
+      'Our Good is specific enough to exclude things — there are many outcomes we\'re not fighting for, and that distinction shapes our decisions.',
     ]
   },
   {
-    name: 'Audience Resonance',
-    desc: 'A brand that means something to everyone usually means nothing to anyone. This measures whether your brand lands with the specific people you actually need to reach.',
+    name: 'The Ally',
+    tag: 'Who we\'re fighting with',
+    subtitle: 'The people who believe as we believe.',
+    intro: 'The Ally is your audience — but defined on different terms than most brands use. It\'s not an age range, an income bracket, or a job title. It\'s the specific people in your market defined by what they already believe. Someone who, when they encounter your brand, feels like they\'ve finally found something that gets it.',
     questions: [
-      'We have current research or evidence that our brand is meaningful to our target audience.',
-      'Our brand speaks to specific people — not a broad, undifferentiated everyone.',
-      'Our brand connects with what our audience aspires to, not just what we offer.',
-      'We have received unprompted, positive feedback about our brand from the right people.'
+      'We can describe our core audience by what they believe, not just by who they are — their worldview, not their demographics.',
+      'Our audience already feels the Enemy, even if they\'ve never had language for it — our brand gives that feeling a name and a direction.',
+      'When our audience encounters our brand, the primary emotion is recognition, not persuasion.',
+      'We are willing to be irrelevant to people who don\'t share our audience\'s worldview — and that willingness shapes how we communicate.',
     ]
   },
   {
-    name: 'Internal Alignment',
-    desc: 'A brand that isn\'t believed internally will eventually betray itself externally. If your people don\'t embody it, your audience will feel the gap.',
+    name: 'The Key',
+    tag: 'What it takes',
+    subtitle: 'The bold belief in the critical requirement.',
+    intro: 'The Key is the one thing your brand believes is non-negotiable to actually defeating the Enemy and reaching the Good. It\'s not a differentiator. It\'s not a feature. It\'s a conviction about what has to be true for any of this to work — and most brands in your space either don\'t believe it, won\'t say it, or aren\'t willing to do it.',
     questions: [
-      'Our senior leadership consistently communicates the brand in the same way.',
-      'Our staff and teams feel proud — and equipped — to represent the brand externally.',
-      'Brand decisions are made with clear ownership and a consistent point of view.',
-      'Our culture and internal experience reflects the brand we project to the outside world.'
+      'We can name the single most important thing we believe is required to actually defeat our Enemy — and it\'s specific enough that not everyone would agree with us.',
+      'Our Key is something we are visibly, demonstrably committed to — not just something we say.',
+      'Our Key is something our competitors could claim but don\'t — or could do but won\'t.',
+      'If our audience understood our Key, it would explain every significant decision our brand has made.',
     ]
   },
   {
-    name: 'Market Distinction',
-    desc: 'If your brand could plausibly belong to a competitor, it doesn\'t fully belong to you yet. Differentiation is the degree to which you occupy a position no one else can honestly claim.',
+    name: 'The Prize',
+    tag: 'What it\'s worth',
+    subtitle: 'The definitive benefit of winning.',
+    intro: 'The Prize is what your audience actually gains when your brand wins. Not what you deliver. Not your value proposition. The Prize is the lived experience of a world where the Enemy has been defeated and the Good is real — described in terms your audience would use, not terms your organization is comfortable with.',
     questions: [
-      'We know our top competitors\' brand positions well enough to articulate what sets us apart.',
-      'Our brand occupies a space that no competitor could plausibly claim as their own.',
-      'When people in our market hear our name, they think of something specific.',
-      'Our differentiation is grounded in truth — not in aspiration alone.'
+      'We can describe the Prize in terms of how our audience\'s life, work, or world is specifically different — not in terms of what we provide.',
+      'Our Prize is the direct and inevitable result of defeating our Enemy — someone who understood both would see the connection without explanation.',
+      'Our Prize is compelling enough that our audience would make real sacrifices — of time, money, habit, or allegiance — to have it.',
+      'Our Prize is specific enough that our audience could tell us whether they\'ve actually received it.',
     ]
   }
 ];
 
 const DIAGNOSES = [
   {
-    alert:    { title: 'Purpose is Missing',         body: 'Without a defined and communicable purpose, every brand investment is working against itself. There is no center of gravity — no point the dots can connect to.' },
-    caution:  { title: 'Purpose is Private',          body: 'You may know why you exist, but that clarity hasn\'t been externalized in a way your audience can feel. Purpose that lives only internally can\'t do brand work.' },
-    strength: { title: 'Purpose is the Anchor',       body: 'A clear, communicable sense of purpose gives every other brand decision a reference point. This is your foundation — it\'s what makes coherence possible.' }
+    alert:    { title: 'No Enemy Named',           body: 'Without a specific, felt Enemy, your brand has no reason to exist that your audience can hold onto. Activity fills the space where opposition should be.' },
+    caution:  { title: 'Enemy is Too Vague',        body: 'You\'re pointing in the right direction, but the Enemy isn\'t specific enough to create sides. A brand that fights "the status quo" hasn\'t named anything yet.' },
+    strength: { title: 'Enemy is Clear and Felt',   body: 'Your brand knows what it\'s against — and that opposition is specific enough that your audience can feel it before you explain it. This is where strong positions begin.' }
   },
   {
-    alert:    { title: 'Brand Erodes at Every Touch', body: 'Inconsistency isn\'t a style problem — it\'s a trust problem. Every touchpoint that looks or sounds different tells your audience there\'s no one in charge of the image they\'re forming.' },
-    caution:  { title: 'Consistency is Situational',  body: 'Your brand shows up well in some places and falls apart in others. The gaps are where perception quietly takes damage — often without anyone noticing.' },
-    strength: { title: 'Consistency Compounds',       body: 'Disciplined visual and verbal consistency is the hidden engine of brand recognition. Your investment here builds on itself every time someone encounters the brand.' }
+    alert:    { title: 'No Vision of the Good',     body: 'Without a vivid, specific depiction of what should be, your brand has direction but no destination. Your audience can\'t follow you somewhere they can\'t see.' },
+    caution:  { title: 'Good is Aspirational, Not Vivid', body: 'You have values, but not a picture. The Good needs to be concrete enough that your audience could recognize it if it arrived — not a feeling, but a world.' },
+    strength: { title: 'Good is Specific and Felt', body: 'Your brand knows what it\'s building toward — and it\'s specific enough to exclude things. That specificity is what makes the position real.' }
   },
   {
-    alert:    { title: 'Brand-Audience Disconnect',   body: 'You may be broadcasting, but you\'re not resonating. Without evidence that your brand means something to the specific people you need to reach, everything else is ambient noise.' },
-    caution:  { title: 'Resonance is Assumed',        body: 'You believe your brand lands — but belief isn\'t evidence. The gap between what you intend and what your audience actually experiences may be wider than you think.' },
-    strength: { title: 'Audience-First Brand Thinking', body: 'Your brand is built around the people it needs to reach, not around internal preferences. This is the difference between a brand and a logo with a tagline.' }
+    alert:    { title: 'Audience is a Profile',     body: 'Defining your audience by demographics gives you a segment, not an Ally. An Ally is defined by what they believe — and whether they already feel your Enemy.' },
+    caution:  { title: 'Audience is Partly Defined', body: 'You know who you\'re for, but not necessarily why they\'re for you. The shift from profile to belief system is where audience strategy becomes brand strategy.' },
+    strength: { title: 'Audience is a Believer',    body: 'Your audience is defined by what they believe, not just who they are. When they find your brand, the feeling is recognition — and that\'s what creates loyalty that doesn\'t require discounting.' }
   },
   {
-    alert:    { title: 'Brand Lives Only in Public',  body: 'A brand that isn\'t embodied internally will eventually contradict itself externally. If your team can\'t articulate or live the brand, your audience will feel the friction before you do.' },
-    caution:  { title: 'Alignment is Leadership-Deep', body: 'Leadership may have clarity, but it isn\'t moving through the organization. Brand coherence requires more than executive ownership — it needs to be distributed.' },
-    strength: { title: 'Culture Carries the Brand',   body: 'When your people understand and believe in the brand, it shows in every interaction. Internal alignment is a competitive advantage most organizations chronically underestimate.' }
+    alert:    { title: 'No Conviction in the Key',  body: 'Without a Key — something specific your brand is willing to bet on — your position has no spine. You can\'t stand for something without being willing to stand on something.' },
+    caution:  { title: 'Key is Too Agreeable',       body: 'A Key everyone can accept isn\'t a Key — it\'s a platitude. The test is disagreement: would a meaningful number of people in your space argue against it?' },
+    strength: { title: 'Key is Specific and Owned',  body: 'Your brand has a conviction others won\'t match. That\'s not a differentiator — it\'s a position. And it explains your decisions in a way demographics never could.' }
   },
   {
-    alert:    { title: 'No Distinct Position',        body: 'If your brand could belong to a competitor, it doesn\'t fully belong to you. A position you haven\'t claimed is a position someone else will — and your audience will fill the blank on their own terms.' },
-    caution:  { title: 'Differentiation is Implicit', body: 'You may know how you\'re different, but that distinction isn\'t landing clearly in the market. Implicit differentiation isn\'t enough — it has to be felt by the people making choices.' },
-    strength: { title: 'Clear Market Position',       body: 'You occupy a specific, ownable space. This is genuinely rare — and it\'s the difference between a brand that earns attention and one that competes on price.' }
+    alert:    { title: 'Prize is a Deliverable',    body: 'What you provide and what your audience gains are rarely the same thing. If your Prize sounds like a service description, it hasn\'t made the shift from output to outcome.' },
+    caution:  { title: 'Prize is Felt but Not Specific', body: 'Your audience wants what you\'re offering, but they couldn\'t tell you whether they\'ve received it. A Prize that can\'t be verified is a promise that can\'t be trusted.' },
+    strength: { title: 'Prize is Real and Verifiable', body: 'Your audience knows exactly what winning looks like — and could tell you whether they\'ve experienced it. That specificity is what makes the brand worth choosing on purpose.' }
   }
 ];
 
 // ─── STATE ───────────────────────────────────────────────────
-let answers = DIMS.map(d => Array(d.questions.length).fill(null));
+let answers = ELEMENTS.map(e => Array(e.questions.length).fill(null));
 let current = 0;
 
 // ─── BUILD ───────────────────────────────────────────────────
@@ -705,26 +787,27 @@ function startDiagnostic(){
 function buildSections(){
   const wrap = document.getElementById('sectionsWrap');
   wrap.innerHTML = '';
-  DIMS.forEach((d, di) => {
+  ELEMENTS.forEach((el, ei) => {
     const div = document.createElement('div');
-    div.className = 'section' + (di === 0 ? ' active' : '');
-    div.id = `sec-${di}`;
+    div.className = 'section' + (ei === 0 ? ' active' : '');
+    div.id = `sec-${ei}`;
     div.innerHTML = `
       <div class="sec-head">
         <div class="sec-meta-row">
-          <span class="sec-num">0${di+1} / 05</span>
-          <span class="sec-dim">${d.name}</span>
+          <span class="sec-num">0${ei+1} / 05</span>
+          <span class="sec-tag">${el.tag}</span>
         </div>
-        <h2>${d.name}</h2>
-        <p>${d.desc}</p>
+        <h2><em>${el.name}</em></h2>
+        <div class="sec-subtitle">${el.subtitle}</div>
+        <p>${el.intro}</p>
       </div>
       <div class="q-grid">
-        ${d.questions.map((q, qi) => `
+        ${el.questions.map((q, qi) => `
           <div class="q-card">
             <div class="q-label">${q}</div>
             <div class="scale-row">
               ${[1,2,3,4,5].map(v => `
-                <button class="s-btn" onclick="pick(${di},${qi},${v},this)">${v}</button>
+                <button class="s-btn" onclick="pick(${ei},${qi},${v},this)">${v}</button>
               `).join('')}
             </div>
             <div class="scale-labels"><span>Strongly Disagree</span><span>Strongly Agree</span></div>
@@ -736,8 +819,8 @@ function buildSections(){
   });
 }
 
-function pick(di, qi, val, btn){
-  answers[di][qi] = val;
+function pick(ei, qi, val, btn){
+  answers[ei][qi] = val;
   btn.closest('.scale-row').querySelectorAll('.s-btn').forEach(b => b.classList.remove('sel'));
   btn.classList.add('sel');
 }
@@ -745,7 +828,7 @@ function pick(di, qi, val, btn){
 function nav(dir){
   const next = current + dir;
   if(next < 0) return;
-  if(next >= DIMS.length){ showResults(); return; }
+  if(next >= ELEMENTS.length){ showResults(); return; }
   document.getElementById(`sec-${current}`).classList.remove('active');
   current = next;
   document.getElementById(`sec-${current}`).classList.add('active');
@@ -754,24 +837,34 @@ function nav(dir){
 }
 
 function updateNav(){
-  const pct = ((current+1)/DIMS.length*100).toFixed(1);
+  const pct = ((current+1)/ELEMENTS.length*100).toFixed(1);
   document.getElementById('progFill').style.width = pct + '%';
-  document.getElementById('progLabel').textContent = `Section ${current+1} of ${DIMS.length}`;
-  document.getElementById('progDim').textContent = DIMS[current].name;
+  document.getElementById('progLabel').textContent = `Element ${current+1} of ${ELEMENTS.length}`;
+  document.getElementById('progEl').textContent = ELEMENTS[current].name;
   document.getElementById('prevBtn').style.visibility = current === 0 ? 'hidden' : 'visible';
-  document.getElementById('nextBtn').textContent = current === DIMS.length-1 ? 'See Results →' : 'Continue →';
+  document.getElementById('nextBtn').textContent = current === ELEMENTS.length-1 ? 'See Results →' : 'Continue →';
 }
 
 // ─── SCORING ─────────────────────────────────────────────────
-function dimScore(di){
-  const vals = answers[di].filter(v => v !== null);
+function elScore(ei){
+  const vals = answers[ei].filter(v => v !== null);
   if(!vals.length) return 2.5;
-  return vals.reduce((a,b) => a+b, 0) / vals.length;
+  return vals.reduce((a,b) => a+b,0) / vals.length;
 }
-function p(raw){ return Math.round((raw/5)*100); }
-function scls(pct){ return pct < 40 ? 'w' : pct < 65 ? 'm' : 's'; }
-function flevel(pct){ return pct < 40 ? 'a' : pct < 65 ? 'c' : 's'; }
-function countAnswered(){ return answers.flat().filter(v => v !== null).length; }
+function pct(raw){ return Math.round((raw/5)*100); }
+function scls(p){ return p < 40 ? 'w' : p < 65 ? 'm' : 's'; }
+function flevel(p){ return p < 40 ? 'a' : p < 65 ? 'c' : 's'; }
+
+// Argument integrity: measures variance across elements
+// Low variance + high scores = high integrity
+// High variance = argument breaks down somewhere
+function argIntegrity(scores){
+  const avg = scores.reduce((a,b)=>a+b,0)/scores.length;
+  const variance = scores.reduce((a,b)=>a+Math.pow(b-avg,2),0)/scores.length;
+  const stdDev = Math.sqrt(variance);
+  const consistencyPenalty = Math.min(stdDev * 15, 25);
+  return Math.max(0, Math.round(pct(avg) - consistencyPenalty));
+}
 
 // ─── RESULTS ─────────────────────────────────────────────────
 function showResults(){
@@ -781,71 +874,72 @@ function showResults(){
   res.classList.add('active');
   window.scrollTo({ top: 0, behavior: 'smooth' });
 
-  const scores = DIMS.map((_,i) => dimScore(i));
-  const overall = scores.reduce((a,b) => a+b,0) / scores.length;
-  const op = p(overall);
-
+  const scores = ELEMENTS.map((_,i) => elScore(i));
+  const overall = scores.reduce((a,b)=>a+b,0)/scores.length;
+  const op = pct(overall);
   const maxI = scores.indexOf(Math.max(...scores));
   const minI = scores.indexOf(Math.min(...scores));
+  const integrity = argIntegrity(scores);
 
-  document.getElementById('scOverall').textContent  = op;
-  document.getElementById('scLabel').textContent    = verdict(op);
-  document.getElementById('resTitle').innerHTML     = headline(op);
-  document.getElementById('scBest').textContent     = p(scores[maxI]);
-  document.getElementById('scBestName').textContent = DIMS[maxI].name;
-  document.getElementById('scWorst').textContent    = p(scores[minI]);
-  document.getElementById('scWorstName').textContent= DIMS[minI].name;
-  document.getElementById('scAnswered').textContent = countAnswered();
+  document.getElementById('scOverall').textContent   = op;
+  document.getElementById('scLabel').textContent     = verdict(op);
+  document.getElementById('resTitle').innerHTML      = headline(op);
+  document.getElementById('scBest').textContent      = pct(scores[maxI]);
+  document.getElementById('scBestName').textContent  = ELEMENTS[maxI].name;
+  document.getElementById('scWorst').textContent     = pct(scores[minI]);
+  document.getElementById('scWorstName').textContent = ELEMENTS[minI].name;
+  document.getElementById('scIntegrity').textContent = integrity;
 
-  buildDimBreakdown(scores);
+  buildBreakdown(scores);
   buildFindings(scores);
   drawMap(scores);
 }
 
 function verdict(v){
-  if(v >= 80) return 'Highly coherent — your brand forms a clear, legible image.';
-  if(v >= 60) return 'Forming — most elements connect, but the shape is incomplete.';
-  if(v >= 40) return 'Fragmented — pieces exist, but the whole doesn\'t connect.';
-  return 'Scattered — your audience can\'t yet connect the dots.';
-}
-function headline(v){
-  if(v >= 80) return 'Your brand has<br>a clear <em style="font-style:italic;color:rgba(120,205,155,0.9)">shape.</em>';
-  if(v >= 60) return 'Your brand<br>is still <em style="font-style:italic;color:#E2BC6E">forming.</em>';
-  if(v >= 40) return 'Your brand<br>is <em style="font-style:italic;color:rgba(255,85,55,0.9)">fragmented.</em>';
-  return 'Your brand<br>is <em style="font-style:italic;color:rgba(255,85,55,0.9)">scattered.</em>';
+  if(v >= 80) return 'Your brand has a position. The argument is clear.';
+  if(v >= 60) return 'Your brand is forming a position. Some elements need sharpening.';
+  if(v >= 40) return 'Your brand has pieces of a position — but not yet one.';
+  return 'Your brand doesn\'t yet have a position it can stand on.';
 }
 
-function buildDimBreakdown(scores){
-  const el = document.getElementById('dimBreakdown');
-  el.innerHTML = scores.map((raw, di) => {
-    const sp = p(raw);
+function headline(v){
+  if(v >= 80) return 'Your brand<br>has a <em style="font-style:italic;color:rgba(120,205,155,0.9)">position.</em>';
+  if(v >= 60) return 'Your brand<br>is <em style="font-style:italic;color:#E2BC6E">forming</em> a position.';
+  if(v >= 40) return 'Your brand has<br><em style="font-style:italic;color:rgba(255,85,55,0.9)">pieces,</em> not a position.';
+  return 'Your brand<br>needs a <em style="font-style:italic;color:rgba(255,85,55,0.9)">foundation.</em>';
+}
+
+function buildBreakdown(scores){
+  const el = document.getElementById('elBreakdown');
+  el.innerHTML = scores.map((raw, ei) => {
+    const sp = pct(raw);
     const cls = scls(sp);
     return `
-      <div class="dim-block">
-        <div class="db-num">0${di+1}</div>
-        <div class="db-name">${DIMS[di].name}</div>
-        <div class="db-score">${sp}</div>
-        <div class="db-bar-track"><div class="db-bar-fill ${cls}" style="width:0%" data-t="${sp}"></div></div>
+      <div class="el-block">
+        <div class="el-num">0${ei+1}</div>
+        <div class="el-name">${ELEMENTS[ei].name}</div>
+        <div class="el-score">${sp}</div>
+        <div class="el-bar-track"><div class="el-bar-fill ${cls}" style="width:0%" data-t="${sp}"></div></div>
       </div>
     `;
   }).join('');
-  setTimeout(() => {
-    document.querySelectorAll('.db-bar-fill').forEach(el => { el.style.width = el.dataset.t + '%'; });
+  setTimeout(()=>{
+    document.querySelectorAll('.el-bar-fill').forEach(el=>{ el.style.width = el.dataset.t+'%'; });
   }, 120);
 }
 
 function buildFindings(scores){
   const grid = document.getElementById('findingsGrid');
-  const statusText = { a: '⚠  Gap', c: '◐  Opportunity', s: '✦  Strength' };
-  grid.innerHTML = scores.map((raw, di) => {
-    const sp = p(raw);
+  const statusText = { a:'⚠  Gap', c:'◐  Forming', s:'✦  Strong' };
+  grid.innerHTML = scores.map((raw, ei) => {
+    const sp = pct(raw);
     const lv = flevel(sp);
-    const key = lv === 'a' ? 'alert' : lv === 'c' ? 'caution' : 'strength';
-    const d = DIAGNOSES[di][key];
+    const key = lv==='a' ? 'alert' : lv==='c' ? 'caution' : 'strength';
+    const d = DIAGNOSES[ei][key];
     return `
       <div class="finding">
         <div class="f-status ${lv}">${statusText[lv]}</div>
-        <div class="f-dim">${DIMS[di].name}</div>
+        <div class="f-el">${ELEMENTS[ei].name}</div>
         <div class="f-title">${d.title}</div>
         <div class="f-body">${d.body}</div>
       </div>
@@ -857,14 +951,14 @@ function drawMap(scores){
   const canvas = document.getElementById('constellationCanvas');
   const dpr = window.devicePixelRatio || 1;
   const W = canvas.offsetWidth, H = 360;
-  canvas.width = W * dpr; canvas.height = H * dpr;
+  canvas.width = W*dpr; canvas.height = H*dpr;
   const ctx = canvas.getContext('2d');
   ctx.scale(dpr, dpr);
 
   ctx.fillStyle = '#000000';
-  ctx.fillRect(0, 0, W, H);
+  ctx.fillRect(0,0,W,H);
 
-  // background stars
+  // bg stars
   for(let i=0;i<150;i++){
     const x=Math.random()*W, y=Math.random()*H;
     const r=Math.random()*0.85+0.1;
@@ -873,40 +967,40 @@ function drawMap(scores){
     ctx.beginPath(); ctx.arc(x,y,r,0,Math.PI*2); ctx.fill();
   }
 
-  // five nodes in a pentagon
-  const cx = W/2, cy = H/2 + 8;
-  const radius = Math.min(W, H) * 0.33;
-  const nodes = scores.map((score, i) => {
-    const angle = (i / scores.length) * Math.PI * 2 - Math.PI / 2;
-    return { x: cx + Math.cos(angle)*radius, y: cy + Math.sin(angle)*radius, score, label: DIMS[i].name.split(' ')[0] };
+  const cx=W/2, cy=H/2+8;
+  const radius = Math.min(W,H)*0.33;
+
+  const nodes = scores.map((score,i)=>{
+    const angle = (i/scores.length)*Math.PI*2 - Math.PI/2;
+    return { x: cx+Math.cos(angle)*radius, y: cy+Math.sin(angle)*radius, score, label: ELEMENTS[i].name };
   });
 
-  // all connecting lines
+  // lines
   for(let i=0;i<nodes.length;i++){
     for(let j=i+1;j<nodes.length;j++){
       const a=nodes[i], b=nodes[j];
       const avg=(a.score+b.score)/2;
-      const alpha=(avg/5)*0.28+0.03;
+      const alpha=(avg/5)*0.3+0.03;
       ctx.strokeStyle=`rgba(226,188,110,${alpha})`;
-      ctx.lineWidth = avg > 3.5 ? 0.9 : 0.5;
-      ctx.setLineDash(avg > 3 ? [5,8] : [2,8]);
+      ctx.lineWidth = avg>3.5 ? 0.9 : 0.5;
+      ctx.setLineDash(avg>3 ? [5,8] : [2,8]);
       ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke();
     }
   }
   ctx.setLineDash([]);
 
   // nodes
-  nodes.forEach(n => {
-    const frac = n.score / 5;
-    const r = 5 + frac * 11;
+  nodes.forEach((n,i)=>{
+    const frac=n.score/5;
+    const r=5+frac*11;
 
-    const g = ctx.createRadialGradient(n.x,n.y,0,n.x,n.y,r*4.5);
+    const g=ctx.createRadialGradient(n.x,n.y,0,n.x,n.y,r*4.5);
     g.addColorStop(0,`rgba(226,188,110,${frac*0.22})`);
     g.addColorStop(1,'rgba(226,188,110,0)');
     ctx.fillStyle=g;
     ctx.beginPath(); ctx.arc(n.x,n.y,r*4.5,0,Math.PI*2); ctx.fill();
 
-    const bright = 0.35 + frac*0.65;
+    const bright=0.35+frac*0.65;
     ctx.fillStyle = frac>0.65
       ? `rgba(255,255,255,${bright})`
       : frac>0.4
@@ -914,11 +1008,11 @@ function drawMap(scores){
         : `rgba(255,85,55,${bright})`;
     ctx.beginPath(); ctx.arc(n.x,n.y,r,0,Math.PI*2); ctx.fill();
 
-    const angle = nodes.indexOf(n) / nodes.length * Math.PI*2 - Math.PI/2;
-    const lx = cx + Math.cos(angle)*(radius+34);
-    const ly = cy + Math.sin(angle)*(radius+34);
+    const angle=(i/nodes.length)*Math.PI*2-Math.PI/2;
+    const lx=cx+Math.cos(angle)*(radius+36);
+    const ly=cy+Math.sin(angle)*(radius+36);
     ctx.fillStyle='rgba(255,255,255,0.75)';
-    ctx.font=`300 9px 'DM Mono', monospace`;
+    ctx.font=`300 10px 'DM Mono', monospace`;
     ctx.textAlign='center';
     ctx.textBaseline='middle';
     ctx.fillText(n.label.toUpperCase(), lx, ly);
